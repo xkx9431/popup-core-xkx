@@ -1,4 +1,4 @@
-
+export type  hashMapValueType = number | string | boolean;
 
 export type Rect = {
     width:number,

@@ -21,7 +21,7 @@
     "clean": "rimraf lib && rimraf dist && rimraf test/visual/dist",
     "test:unit": "jest --coverage src",
     "build:es": "tsc ",
-    "build:cmj": "tsc --module commonjs"
+    "build:cmj": "tsc  --module commonjs  --outDir dist/esm"
   },
   "jest": {
     "preset": "./.config/jest.config"
