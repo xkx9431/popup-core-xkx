@@ -20,7 +20,7 @@
   "scripts": {
     "clean": "rimraf lib && rimraf dist && rimraf test/visual/dist",
     "test:unit": "jest --coverage src",
-    "build": "tsc --src",
+    "build": "tsc ",
     "build:es": "babel src -d lib --ignore '**/*.test.js','**/__mocks__'"
   },
   "jest": {
