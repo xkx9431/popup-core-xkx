@@ -2,15 +2,25 @@
   "include": ["./src/**/*.ts"],
   "exclude": ["./**/*.test.ts"],
   "compilerOptions": {
-    "target": "es2015",
-    "lib": ["dom", "es2017"],
-    "moduleResolution": "node",
     "module": "es2015",
-    "removeComments": false,
+    "esModuleInterop": true,
+    "target": "es6",
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "baseUrl": ".",
     "declaration": true,
-    "emitDeclarationOnly": true,
-    "outDir": "lib",
-  }
+    // "emitDeclarationOnly": true,
+    "paths": {
+        "*": [
+            "node_modules/*",
+            "src/types/*"
+        ]
+    },
+    "removeComments": false,
+}
+
 }
 
 // {
