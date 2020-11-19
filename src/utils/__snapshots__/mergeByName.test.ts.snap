@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`deep merges an array of modifiers by their name 1`] = `Array []`;
