@@ -5,6 +5,10 @@
     "module": "es2015",
     "esModuleInterop": true,
     "target": "es6",
+    "lib":[
+        "DOM",
+        "ES2015"
+    ],
     "noImplicitAny": true,
     "moduleResolution": "node",
     "sourceMap": true,

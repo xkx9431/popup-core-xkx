@@ -2,6 +2,6 @@ import {  BasePlacement,  Placement,  auto } from '../enums'
 
 export default function getBasePlacement(
   placement: Placement | typeof auto
-): BasePlacement {
-  return placement.split('-')[0] as BasePlacement; // issues here
+): BasePlacement | typeof auto {
+  return placement.split('-')[0] as any; // issues here
 }
