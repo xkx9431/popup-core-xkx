@@ -49,6 +49,11 @@ export const beforeWrite: 'beforeWrite' = 'beforeWrite';
 export const write: 'write' = 'write';
 export const afterWrite: 'afterWrite' = 'afterWrite';
 
+//
+export const popper: 'popper' = 'popper';
+export const reference: 'reference' = 'reference';
+export type Context = typeof popper | typeof reference;
+
 export const modifierPhases: Array<ModifierPhases> = [
     beforeRead,
     read,
@@ -71,3 +76,30 @@ export type ModifierPhases =
     | typeof beforeWrite
     | typeof write
     | typeof afterWrite;
+
+export const viewport : 'viewport' =  'viewport';
+export const clippingParents: 'clippingParents' = 'clippingParents';
+export type RootBoundary = typeof viewport | 'document';
+export type Boundary =
+    | HTMLElement
+    | Array<HTMLElement>
+    | typeof clippingParents;
+
+export const variationPlacements: Array<VariationPlacement> = basePlacements.reduce(
+    (acc: Array<VariationPlacement>, placement: BasePlacement) =>
+        acc.concat([`${placement}-${start}` as VariationPlacement, `${placement}-${end}` as VariationPlacement]),
+        []
+    );
+
+export const placements: Array<Placement> = [...basePlacements, auto].reduce(
+    (
+        acc: Array<Placement>,
+        placement: BasePlacement | typeof auto
+    ): Array<Placement> =>
+        acc.concat([
+        placement,
+        `${placement}-${start}`as Placement,
+        `${placement}-${end}`as Placement,
+        ]),
+    []
+    );

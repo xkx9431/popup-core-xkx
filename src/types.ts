@@ -175,3 +175,5 @@ export interface Modifier<Name, Options> {
     options?: Partial<Options>,
     data?: Obj,
 };
+
+export type Padding = number | Partial<SideObject>;
