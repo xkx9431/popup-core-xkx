@@ -1,4 +1,4 @@
-import type { Rect, VirtualElement, Window } from '../types';
+import type { Rect, VirtualElement } from '../types';
 import getBoundingClientRect from './getBoundingClientRect';
 import getNodeScroll from './getNodeScroll';
 import getNodeName from './getNodeName';
@@ -31,11 +31,14 @@ export default function getCompositeRect(
         }
 
         if (isHTMLElement(offsetParent)) {
-        offsets = getBoundingClientRect(offsetParent);
-        offsets.x += offsetParent.clientLeft;
-        offsets.y += offsetParent.clientTop;
+            // @ts-ignore
+            offsets = getBoundingClientRect(offsetParent);
+             // @ts-ignore
+            offsets.x += offsetParent.clientLeft;
+             // @ts-ignore
+            offsets.y += offsetParent.clientTop;
         } else if (documentElement) {
-        offsets.x = getWindowScrollBarX(documentElement);
+            offsets.x = getWindowScrollBarX(documentElement);
         }
     }
 
