@@ -122,7 +122,7 @@ export type OptionsGeneric<TModifier> = {
     onFirstUpdate?: (state:Partial<State>) => void,
 };
 
-interface Instance {
+export interface Instance {
     state : State,
     destroy: ()=> void,
     forceUpdate: ()=>void,
